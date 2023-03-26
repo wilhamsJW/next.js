@@ -1,25 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import NavBar from "@/components/NavBar"; // modern syntax with @
+//import NavBar from "../components/NavBar" // old syntaxe with @
 
-//import styles from '../styles'
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div >
-      <ul>
-        <li>
-          <Link href="/products">Ir para páginas de Produtos
-          - Seguindo o padrão de SPA que um deles é sem page reload
-          Ele trafega entre arquivos pré renderizados
-          </Link>
-        </li>
-        <li>
-        <Link href="/about">Ir para página About
-          </Link>
-        </li>
-      </ul>
-      <h1>HelloO Word Next.js</h1>
-    </div>
-  )
+    <>
+      <Head>
+        <title>Main Page</title>
+        <meta name="keywords" content="roupas, calçados, boné"></meta>
+        <meta name="description" content="encontre roupas baratas"></meta>
+      </Head>
+      <div >
+        <h1>HelloO Word Next.js</h1>
+      </div>
+    </>
+  );
 }
