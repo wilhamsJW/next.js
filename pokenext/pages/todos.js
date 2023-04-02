@@ -13,6 +13,10 @@ export async function getStaticProps() {
 
 }
 
+// ao trocar de página os dados já estão pré renderizados isso trás velocidade
+// a página e melhora o rankeamento do google do site
+// SEO torna-se mais eficiente
+
 export default function Todos({all}) {
     return (
         <>
