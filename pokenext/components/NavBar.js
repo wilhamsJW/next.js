@@ -22,6 +22,9 @@ export default function NavBar() {
         <li>
           <Link href="/todos">Todos API - Usando API NEXT</Link>
         </li>
+        <li>
+          <Link href="/todos/1">CRIANDO ROTAS DINÂMICAS</Link>
+        </li>
       </ul>
     </>
   );
