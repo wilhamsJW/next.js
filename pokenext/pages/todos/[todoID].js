@@ -15,7 +15,7 @@ import { useRouter } from "next/router";
 export default function Todo() {
   const router = useRouter();
   const todoId = router.query.todoID;
-  console.log("dentor do todoID", todoId);
+
   return (
     <>
       <Link href={"/"}>
@@ -40,6 +40,7 @@ export default function Todo() {
           culpa qui officia deserunt... <br />
           <br />
           <Link href={`/todos/${todoId}/comments/01`}>Detalhes 01</Link>
+          {/**esse /todos/ na url se refere a pasta todos */}
         </p>
         <br />
         <br />
