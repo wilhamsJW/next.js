@@ -10,6 +10,7 @@ import Link from "next/link";
 // that contains information about the user request and the execution environment,
 // such as the URL path, query parameters, request headers, and other information.
 
+// getStaticProps acessa um por um
 export async function getStaticProps(context) {
   const { params } = context; // capture todoId
 
@@ -17,24 +18,28 @@ export async function getStaticProps(context) {
     `https://jsonplaceholder.typicode.com/todos/${params.todoID}`
   );
 
-  const all = await data.json(); // transferring the data to json because it comes as text
+  const todo = await data.json(); // transferring the data to json because it comes as text
 
   // this return is default for next, as well the function name getStaticProps()
   // getStaticProps() -> function to make api call
   return {
-    props: { all },
+    props: { todo },
   };
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+// getStaticPaths acessa todos
+export async function getStaticPaths() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos")
 
   const data = await res.json();
 
+  // O next espera que passemos todos os paths pra ele para q ele possa
+  // pré renderizar as pages, e fazemos isso abaixo
+  // todoID dentro do params tem que ser igual o nome do arquivo
   const paths = data.map((todo) => {
     return {
       params: {
-        todoId: `${todo.id}`,
+        todoID: `${todo.id}`,
       },
     };
   });
@@ -45,8 +50,6 @@ export async function getStaticProps() {
 }
 
 export default function Todo({ todo }) {
-  const router = useRouter();
-  const todoId = router.query.todoID;
 
   return (
     <>
@@ -55,45 +58,22 @@ export default function Todo({ todo }) {
         <br />
         <br />
         <h4>
-          isso irá criar uma rota com o nome: todos/1, e se colocarmos um 2
-          manualmente
+          Using getStaticProps
           <br />
-          na URL irá criar outra página e assim suscivamente
+          <br />
         </h4>
         <br />
         <br />
-        <h4>Exibindo o ID da página criada: {todoId}</h4>
+        <h4>Exibindo o ID da página criada: {todo.id}</h4>
         <br />
         <br />
         <p>
-          Comentários 01: "Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt... <br />
+          Text Dinãmico pego da API: {todo.title} <br />
           <br />
-          <Link href={`/todos/${todoId}/comments/01`}>Detalhes 01</Link>
+          <Link href={`/todos/${todo.id}/comments/01`}>Detalhes 01</Link>
           {/**esse /todos/ na url se refere a pasta todos */}
         </p>
         <br />
-        <br />
-        <p>
-          Comentários 02: "Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt...{" "}
-          <br />
-          <br />
-          <Link href={`/todos/${todoId}/comments/02`}>Detalhes 02</Link>
-        </p>
-        <br />
-        <br />
-        <p>
-          Comentários 03: "Lorem ipsum dolor sit amet, consectetur adipiscing in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt... <br />
-          <br />
-          <Link href={`/todos/${todoId}/comments/03`}>Detalhes 03</Link>
-        </p>
       </Link>
     </>
   );
