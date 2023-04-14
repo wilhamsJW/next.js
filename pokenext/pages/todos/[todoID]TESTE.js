@@ -37,7 +37,7 @@ export default function Todo() {
         <br />
         <br />
         <p>
-          Comentários 01: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          Comentários 01: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt... <br />
@@ -48,7 +48,7 @@ export default function Todo() {
         <br />
         <br />
         <p>
-          Comentários 02: "Lorem ipsum dolor sit amet, consectetur adipiscing
+          Comentários 02: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing
           elit, sed do eiusmod tempor incididunt ut labore et dolore magna
            sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt... <br />
@@ -58,7 +58,7 @@ export default function Todo() {
         <br />
         <br />
         <p>
-          Comentários 03: "Lorem ipsum dolor sit amet, consectetur adipiscing
+          Comentários 03: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing
          in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt... <br />
