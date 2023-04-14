@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
 // getStaticPaths acessa todos
 // fazendo a renderiação individual de cada página
 export async function getStaticPaths() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos")
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
 
   const data = await res.json();
 
@@ -47,15 +47,12 @@ export async function getStaticPaths() {
     };
   });
 
-  
-
-  return { paths, fallback: true }
+  return { paths, fallback: false }; // quando colocado como true deu erro no buildin
   // fallback -> false: so conhece as rotas carregadas no build
   // fallback -> true: o Next.js gera a página dinamicamente no momento em que ela é acessada pelo usuário e também adiciona a página gerada em cache para ser reutilizada em solicitações futuras.
 }
 
 export default function Todo({ todo }) {
-
   const router = useRouter();
   const todoId = router.query.todoID;
 
@@ -78,7 +75,9 @@ export default function Todo({ todo }) {
         <p>
           Text Dinãmico pego da API: {todo.title} <br />
           <br />
-          <Link href={`/todos/${todoId}/comments/01`}>Detalhes -- {todoId}</Link>
+          <Link href={`/todos/${todoId}/comments/01`}>
+            Detalhes -- {todoId}
+          </Link>
           {/**esse /todos/ na url se refere a pasta todos */}
         </p>
         <br />
