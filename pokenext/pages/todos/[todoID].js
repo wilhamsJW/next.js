@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 // such as the URL path, query parameters, request headers, and other information.
 
 // getStaticProps acessa um por um
+// fazendo a leitura total dos dados
 export async function getStaticProps(context) {
   const { params } = context; // capture todoId
 
@@ -29,6 +30,7 @@ export async function getStaticProps(context) {
 }
 
 // getStaticPaths acessa todos
+// fazendo a renderiação individual de cada página
 export async function getStaticPaths() {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos")
 
