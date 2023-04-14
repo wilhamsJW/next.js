@@ -50,6 +50,13 @@ export async function getStaticPaths() {
   return { paths, fallback: false }; // quando colocado como true deu erro no buildin
   // fallback -> false: so conhece as rotas carregadas no build
   // fallback -> true: o Next.js gera a página dinamicamente no momento em que ela é acessada pelo usuário e também adiciona a página gerada em cache para ser reutilizada em solicitações futuras.
+
+//   Porém, é importante lembrar que o fallback true pode levar a uma piora no desempenho, já que o Next.js precisa gerar a página dinamicamente a 
+//   cada solicitação do usuário. Além disso, se o usuário acessar uma página que ainda não foi gerada pelo Next.js, ele pode ver um carregamento 
+//   mais lento ou uma página em branco.
+
+//  Caso você esteja utilizando fallback true, é recomendado adicionar um componente de carregamento ou uma mensagem de "carregando" na página
+//  enquanto o Next.js gera a página dinamicamente.
 }
 
 export default function Todo({ todo }) {
