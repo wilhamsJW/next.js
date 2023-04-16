@@ -1,6 +1,8 @@
 # next.js
 Project made with next its main functionalities
 
+
+
 ## Features used in this study project
 1. Creation of pages and routing
 2. Navigation between pages
@@ -11,6 +13,8 @@ Project made with next its main functionalities
 7. Dynamic Routes
 8. Build
 9. Styling the 404 page.
+
+This other [Project PokeNext](https://github.com/wilhamsJW/pokeNext) showcases the use of Next.js with all the aforementioned features plus a deployment to Vercel.
 
 ## How the Build of Next.js works
 
