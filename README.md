@@ -1,6 +1,17 @@
 # next.js
 Project made with next its main functionalities
 
+## Features used in this study project
+1 - Creation of pages and routing
+2 - Navigation between pages
+3 - Components
+4 - Styling with CSS in Next.js
+5 - Assets
+6 - API Next.js
+7 - Dynamica Routes
+8 - Build
+9 - Styling the 404 page.
+
 ## How the Build of Next.js works
 
 1 - delete folder next
