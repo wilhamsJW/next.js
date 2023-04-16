@@ -13,7 +13,7 @@ Project made with next its main functionalities
  (para rodar o start precisamos dar o build antes, o start ele mostra a página rodando exatamente
  como irá rodar em produção, estará tudo pré renderizado e instantâneo)
 
- # TIP:
+ ### TIP:
 
  For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'yarn a
 recommended. Run 'yarn add sharp', and Next.js will use it automatically for Image Optimization.
